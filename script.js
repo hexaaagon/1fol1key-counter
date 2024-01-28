@@ -3,7 +3,6 @@ import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 // Keyboard Counter
 let counter = 0;
-let kpm = 0;
 const hitElement = document.querySelector(".counter-stamp");
 document.body.onkeyup = function (e) {
   if ((e.keyCode == 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)) {
@@ -29,16 +28,16 @@ const renderCount = function () {
   }
 };
 
-const kpmElement = document.querySelector(".kpm");
+const kpsElement = document.querySelector(".kps");
 let startTime = new Date().getTime();
 
 setInterval(() => {
   const currentTime = new Date().getTime();
   const elapsedTimeInSeconds = (currentTime - startTime) / 1000;
 
-  kpmElement.innerHTML = ((counter / elapsedTimeInSeconds) * 60).toFixed(1);
-}, 250);
+  kpsElement.innerHTML = ((counter / elapsedTimeInSeconds) * 1).toFixed(1);
+}, 1000);
 
 setInterval(() => {
-  startTime = new Date().getTime();
+  startTime = new Date(new Date.getTime() - 30 * 1000).getTime();
 }, 60000);
