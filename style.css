@@ -1,0 +1,4 @@
+.text-ultrabig {
+  font-size: calc((20dvw + 20dvh) / 2);
+  line-height: calc((18dvw + 18dvh) / 2);
+}
